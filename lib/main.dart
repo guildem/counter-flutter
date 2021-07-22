@@ -17,10 +17,12 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final state = context.watch<AppState>();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: state.primaryColor,
+        accentColor: state.primaryColor,
       ),
       home: HomeScreen(title: 'My personal counter'),
     );
