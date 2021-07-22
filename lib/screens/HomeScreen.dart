@@ -19,19 +19,30 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'This is the counter value:',
             ),
             Text(
-              '${state.value}',
+              '${state.counter}',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: state.increment,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        
+        children: [
+          FloatingActionButton(
+            onPressed: state.incrementCounter,
+            tooltip: 'Increment',
+            child: Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: state.decrementCounter,
+            tooltip: 'Decrement',
+            child: Icon(Icons.remove),
+          ),
+        ],
       ),
     );
   }
